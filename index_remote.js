@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://frontendmodu1.onrender.com/",
     methods: ["GET", "POST"]
   }
 });
@@ -20,7 +20,7 @@ const io = socketIo(server, {
 app.use(helmet());
 app.use(morgan('combined'));
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://frontendmodu1.onrender.com/',
   credentials: true
 }));
 app.use(express.json());
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 const connectedUsers = new Map();
 
 // Configuration for remote agentic server
-const AGENTIC_SERVER_URL = 'https://backend-python-y57q.onrender.com';
+const AGENTIC_SERVER_URL = 'https://agentmodu1.onrender.com';
 const AGENTIC_TIMEOUT = parseInt(process.env.AGENTIC_TIMEOUT) || 30000; // 30 seconds
 
 // Function to call remote agentic server
